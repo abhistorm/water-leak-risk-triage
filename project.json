@@ -1,0 +1,54 @@
+{
+  "id": "096",
+  "slug": "096-water-leak-risk-triage",
+  "name": "Water Leak Risk Triage",
+  "domain": "Public services & civic systems",
+  "domain_slug": "public-services",
+  "task_type": "classification",
+  "target": "p096_water_leak_risk_triage_outcome_label",
+  "features": [
+    "p096_water_leak_risk_triage_wait_time_min",
+    "p096_water_leak_risk_triage_application_completeness",
+    "p096_water_leak_risk_triage_service_load",
+    "p096_water_leak_risk_triage_repeat_visits",
+    "p096_water_leak_risk_triage_travel_distance_km",
+    "p096_water_leak_risk_triage_staff_ratio",
+    "p096_water_leak_risk_triage_response_delay_hours",
+    "p096_water_leak_risk_triage_neighborhood_index",
+    "p096_water_leak_risk_triage_weather_impact",
+    "p096_water_leak_risk_triage_request_complexity"
+  ],
+  "model_key": "k-nearest-neighbors",
+  "model_class": "KNeighborsClassifier",
+  "serving": "FastAPI",
+  "extension_focus": "Weights & Biases experiment tracking",
+  "seed": 202696,
+  "rows": 449367,
+  "dataset_bytes": 39097116,
+  "model_training": {
+    "source": "synthetic dataset bundled with this project",
+    "sample_rows": 5000,
+    "fit_rows": 4000,
+    "holdout_rows": 1000,
+    "metrics": {
+      "accuracy": 0.891,
+      "macro_f1": 0.891,
+      "roc_auc": 0.9601
+    },
+    "artifact": "models/model.joblib"
+  },
+  "gui_feature": {
+    "mode": "quality",
+    "title": "Water Leak Risk Triage · Input quality check",
+    "description": "Check missing, non-finite, and out-of-demo-range values before inference. This panel is tuned to Water Leak Risk Triage and its p096 water leak risk triage staff ratio signal.",
+    "focus_feature": "p096_water_leak_risk_triage_staff_ratio",
+    "mode_title": "Input quality check"
+  },
+  "gui": {
+    "frontend": "HTML/CSS/JavaScript",
+    "backend": "FastAPI",
+    "standalone": true
+  },
+  "model_artifact": "models/model.joblib",
+  "model_bytes": 755762
+}

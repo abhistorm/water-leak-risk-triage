@@ -1,0 +1,14 @@
+{
+  "features": {
+    "p096_water_leak_risk_triage_wait_time_min": 0.0,
+    "p096_water_leak_risk_triage_application_completeness": 0.0,
+    "p096_water_leak_risk_triage_service_load": 0.0,
+    "p096_water_leak_risk_triage_repeat_visits": 0.0,
+    "p096_water_leak_risk_triage_travel_distance_km": 0.0,
+    "p096_water_leak_risk_triage_staff_ratio": 0.0,
+    "p096_water_leak_risk_triage_response_delay_hours": 0.0,
+    "p096_water_leak_risk_triage_neighborhood_index": 0.0,
+    "p096_water_leak_risk_triage_weather_impact": 0.0,
+    "p096_water_leak_risk_triage_request_complexity": 0.0
+  }
+}

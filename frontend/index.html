@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f3ed" />
+  <title>AI/ML Project Console</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script>window.PROJECT_CONFIG = {"id":"096","slug":"096-water-leak-risk-triage","name":"Water Leak Risk Triage","domain":"Public services & civic systems","domain_slug":"public-services","task_type":"classification","target":"p096_water_leak_risk_triage_outcome_label","features":["p096_water_leak_risk_triage_wait_time_min","p096_water_leak_risk_triage_application_completeness","p096_water_leak_risk_triage_service_load","p096_water_leak_risk_triage_repeat_visits","p096_water_leak_risk_triage_travel_distance_km","p096_water_leak_risk_triage_staff_ratio","p096_water_leak_risk_triage_response_delay_hours","p096_water_leak_risk_triage_neighborhood_index","p096_water_leak_risk_triage_weather_impact","p096_water_leak_risk_triage_request_complexity"],"model_key":"k-nearest-neighbors","model_class":"KNeighborsClassifier","serving":"FastAPI","extension_focus":"Weights & Biases experiment tracking","seed":202696,"rows":449367,"dataset_bytes":39097116,"model_training":{"source":"synthetic dataset bundled with this project","sample_rows":5000,"fit_rows":4000,"holdout_rows":1000,"metrics":{"accuracy":0.891,"macro_f1":0.891,"roc_auc":0.9601},"artifact":"models/model.joblib"},"gui_feature":{"mode":"quality","title":"Water Leak Risk Triage · Input quality check","description":"Check missing, non-finite, and out-of-demo-range values before inference. This panel is tuned to Water Leak Risk Triage and its p096 water leak risk triage staff ratio signal.","focus_feature":"p096_water_leak_risk_triage_staff_ratio","mode_title":"Input quality check"},"gui":{"frontend":"HTML/CSS/JavaScript","backend":"FastAPI","standalone":true},"model_artifact":"models/model.joblib","model_bytes":755762};</script>
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Project home"><span class="mark">M</span><span><b>MODEL<br />FIELD</b><small>PROJECT CONSOLE</small></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <div class="side-project"><span class="project-id">096</span><span>PUBLIC SERVICES & CIVIC SYSTEMS</span></div>
+      <div class="side-line"></div>
+      <div class="side-label">THIS PROJECT</div>
+      <a class="nav-item active" href="#workspace"><span class="nav-dot"></span>Prediction desk</a>
+      <a class="nav-item" href="#workflow"><span class="nav-dot"></span>Input quality check</a>
+      <a class="nav-item" href="#model-card"><span class="nav-dot"></span>Model card</a>
+      <div class="sidebar-bottom"><span class="live-dot"></span><span>Local model API</span><code>/api/health</code></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div class="crumb">AI/ML PROJECTS <span>/</span> 096</div><div class="top-status"><span class="live-dot"></span> MODEL READY <span class="top-divider"></span><span class="synthetic-tag">SYNTHETIC DEMO</span></div></header>
+      <div class="content">
+        <section class="hero">
+          <div class="hero-copy"><div class="eyebrow">PUBLIC SERVICES & CIVIC SYSTEMS <span>·</span> PROJECT 096</div><h1>Water Leak Risk Triage</h1><p>A focused classification workbench for Water Leak Risk Triage, powered by a fitted KNeighborsClassifier artifact.</p></div>
+          <div class="hero-mark"><span class="mark-grid" aria-hidden="true"></span><div><small>MODEL FAMILY</small><b>KNeighborsClassifier</b></div></div>
+        </section>
+        <section class="stat-strip" id="model-card">
+          <div><span class="stat-label">TASK</span><strong>CLASSIFICATION</strong></div>
+          <div><span class="stat-label">TARGET</span><strong>p096_water_leak_risk_triage_outcome_label</strong></div>
+          <div><span class="stat-label">TRAINING SAMPLE</span><strong>4000 ROWS</strong></div>
+          <div><span class="stat-label">APP FOCUS</span><strong>INPUT QUALITY CHECK</strong></div>
+        </section>
+        <section class="workspace" id="workspace">
+          <article class="panel input-panel">
+            <div class="panel-head"><div><div class="eyebrow">01 / INPUT SIGNALS</div><h2>Shape the input</h2></div><button class="quiet-button" id="resetButton" type="button">Reset</button></div>
+            <p class="panel-note">Values use a synthetic standardized scale. Start at 0; demo controls span −4 to +4.</p>
+            <form id="predictionForm"><div class="feature-list" id="featureList"></div><div class="form-actions"><button class="primary-button" type="submit"><span>Run model</span><span aria-hidden="true">↗</span></button><button class="secondary-button" id="sampleButton" type="button">Load sample signal</button></div></form>
+            <div id="qualityHint" class="quality-hint" aria-live="polite">10 feature signals ready</div>
+          </article>
+          <article class="panel result-panel">
+            <div class="panel-head"><div><div class="eyebrow">02 / MODEL OUTPUT</div><h2>Prediction</h2></div><span class="status-chip"><span class="live-dot"></span> LIVE</span></div>
+            <div id="resultEmpty" class="result-empty"><div class="empty-symbol">∿</div><strong>Waiting for an input</strong><span>Run the fitted model to see the output and confidence signals.</span></div>
+            <div id="resultContent" class="result-content hidden" aria-live="polite"></div>
+            <div class="result-footer"><span>Model file</span><code>models/model.joblib</code></div>
+          </article>
+        </section>
+        <section class="workflow-section" id="workflow">
+          <div class="section-heading"><div><div class="eyebrow">03 / PROJECT-SPECIFIC TOOL</div><h2>Water Leak Risk Triage · Input quality check</h2></div><span class="feature-index">FEATURE 096 / 100</span></div>
+          <p class="workflow-description">Check missing, non-finite, and out-of-demo-range values before inference. This panel is tuned to Water Leak Risk Triage and its p096 water leak risk triage staff ratio signal.</p>
+          <div id="workflowTool" class="workflow-tool"></div>
+        </section>
+        <section class="lower-grid">
+          <article class="panel model-panel"><div class="eyebrow">MODEL CARD</div><h3>Fitted for this project</h3><p id="modelSummary">KNeighborsClassifier · trained on a bounded synthetic sample.</p><div id="metrics" class="metric-list"></div></article>
+          <article class="panel tech-panel"><div class="eyebrow">NEXT TECHNOLOGY FOCUS</div><h3>Weights & Biases experiment tracking</h3><p>This is the project’s suggested integration path; the fitted baseline remains runnable without this optional service.</p><a class="text-link" href="/README.md">Open project instructions <span>↗</span></a></article>
+        </section>
+        <footer class="page-footer"><span>Generated sample data · educational use only</span><span>Every prediction is computed by this project’s saved model.</span></footer>
+      </div>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
